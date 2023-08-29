@@ -27,6 +27,8 @@ if(b^2 == 4*a*c){
 }
 ```
 
+The quadratic formula can be applied to solve this equation: $$(-b \pm \sqrt{b^{2}-4ac})/2a $$
+
 For the quadratic equation $`r a`x^{2} + `r b`x + `r c` = 0$, `r p1`
 
 (@) **Include a graph of $f(x)$ versus $x$ for $x \in (-5,5)$.**
