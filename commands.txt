@@ -1,0 +1,49 @@
+# make commands file
+> commands.txt
+
+# 4. 
+cd /Users/RachelSussman/Library/CloudStorage/OneDrive-HarvardUniversity/_/HDS_SM60/F23/BST260/BST260
+
+# 5. 
+mkdir project-1
+cd project-1
+
+# 6. 
+mkdir data rdas code docs
+
+# 7.
+curl https://raw.githubusercontent.com/rafalab/dslabs/master/inst/extdata/murders.csv -o rdas/murders.csv
+
+# 8.
+> code/code-1.R
+nano code/code-1.R
+filename <- "../rdas/murders.csv"
+dat <- read.csv(filename)
+
+# 9. 
+nano code/code-1.R 
+out <- "../rdas"
+dat <- save(dat, file = out)
+
+# 10.
+echo "load('../rdas/murders.rda')" > code/code-2.R
+less code/code-2.R
+
+# 11. 
+cd code
+ls *.R
+
+# 12.
+cd ..
+mv code/code-1.R code/import.R
+
+# 13. 
+mv ../project-1 ../murders 
+## since we used relative paths and never explicitly named the project-1 directory as such, we do not have to modify the R script so long 
+as we're still starting from the code directory.
+
+# 14. 
+cd ../murders
+man find
+find . -name "*.R" -print
+
