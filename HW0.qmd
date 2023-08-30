@@ -1,6 +1,7 @@
 ---
 title: "HW0"
 author: "Rachel Sussman"
+format: html
 execute:
   echo: false
 ---
@@ -24,11 +25,13 @@ if(b^2 == 4*a*c){
   p2 = paste0("As indicated by the red dashed lines, there are two points where the quadratic curve intersects with the line y=0, one at x=", (-b + sqrt(b^2 - 4*a*c))/(2*a), " and the other at x=", (-b - sqrt(b^2 - 4*a*c))/(2*a), ".")
 }else if(b^2 < 4*a*c){
   p1 = paste0("there are no real solutions.")
-  p2 = paste0("As you can see, the quadratic curve does not intersect with the line y=0; hence, there are no solutions")
+  p2 = paste0("As you can see, the quadratic curve does not intersect with the line y=0; hence, there are no solutions.")
 }
 ```
 
-The quadratic formula can be applied to solve this equation: $$(-b \pm \sqrt{b^{2}-4ac})/2a $$
+The quadratic formula can be applied to solve this equation: $$\frac{-b \pm \sqrt{b^{2}-4ac}}{2a} $$ Specifically, the variables a, b, and c are entered into the above formula to find the solutions.
+
+A given quadratic equation can have 0, 1, or 2 solutions. A quadratic equation has no real solutions when the curve does not intersect with the line y=0, one solution when the curve intersects with the line y=0 once (at the vertex of the parabola), and two solutions when the curve intersects with the line y=0 twice. The number of solutions is determined by the *discriminant* of the formula, or $b^{2}-4ac$. When the discriminant is greater than 0, there are two solutions, when the discriminant is equal to 0, there is one solution, and when the discriminant is less than 0, there are no solutions (since the square root cannot be negative).
 
 For the quadratic equation $`r a`x^{2} + `r b`x + `r c` = 0$, `r p1`
 
