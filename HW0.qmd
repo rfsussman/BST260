@@ -5,6 +5,7 @@ execute:
   echo: false
 ---
 
+
 ## Exercises
 
 (@) **Write a Quarto document that defines variables $a=1, b=-1, c=-2$
@@ -36,25 +37,21 @@ For the quadratic equation $`r a`x^{2} + `r b`x + `r c` = 0$, `r p1`
 ```{r}
 x=seq(-5, 5, length.out = 300)
 y=a*x^2 + b*x + c
-plot(x, y)
-abline(h = 0)
+plot(x, y, type = "l")
+abline(h = 0, lty = 2)
 
 if(b^2 == 4*a*c){
-  printout = paste0("There is one solution. The solution is ", (-b + sqrt(b^2 - 4*a*c))/(2*a), ".")
   abline(v = (-b + sqrt(b^2 - 4*a*c))/(2*a), col = "red", lty=2)
 }else if(b^2 > 4*a*c){
-  printout = paste0("There are two solutions. The solutions are ", (-b + sqrt(b^2 - 4*a*c))/(2*a), " and ", (-b - sqrt(b^2 - 4*a*c))/(2*a), ".")
     abline(v = (-b + sqrt(b^2 - 4*a*c))/(2*a), col = "red", lty=2)
     abline(v = (-b - sqrt(b^2 - 4*a*c))/(2*a), col = "red", lty=2)
-}else if(b^2 < 4*a*c){
-  printout = paste0("There are no real solutions.")
 }
 ```
 Here is a graph of $f(x)$ versus $x$ for $x \in (-5,5)$. `r p2`
 
 (@) **Generate a PDF report using knitr. Do not show the R code, only the solutions and explanations of what the reader is seeing.**
 
-In the terminal, enter `quarto render HW0.qmd --to pdf`. To hide the R code, type `execute: echo: false` in the Quarto file header. Alternatively, in the RStudio console, enter `rmarkdown::render("HW0.qmd", "pdf_document")`. To hide the R code, type `echo = FALSE` in each bracket that initializes a code chunk.
+In the terminal, enter `quarto render HW0.qmd --to pdf`. Alternatively, in the RStudio console, enter `rmarkdown::render("HW0.qmd", "pdf_document")`. To hide the R code, type `execute: echo: false` in the Quarto file header or  `echo = FALSE` in each bracket that initializes a code chunk.
 
 (@) **Erase the PDF report and reproduce it but this time using $a=1, b=2, c=5$.**
 
